@@ -4,304 +4,516 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RCS TOTY 2026</title>
-<meta name="description" content="RCS Team of the Year 2026 — the COMPRSA team and the ERP platform they build.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<meta name="description" content="RCS Team of the Year 2026 — the ERP platform COMPRSA runs on, and the team that builds it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&family=Cabin:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="topbar">
-  <div class="wrap topbar-in">
-    <span class="mark">RCS<span class="dot"></span>TOTY <span class="yr">2026</span></span>
-    <nav class="topnav">
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top"><span class="glyph"></span>RCS</a>
+    <nav class="nav-links">
       <a href="#platform">Platform</a>
-      <a href="#architecture">Architecture</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#process">Process</a>
       <a href="#team">Team</a>
-      <a href="#delivery">Delivery</a>
-      <a href="#stack">Stack</a>
-      <span class="badge">Team of the Year</span>
+      <a href="#faq">FAQ</a>
     </nav>
-  </div>
-</div>
-
-<section class="hero">
-  <div class="wrap hero-in">
-    <div>
-      <div class="eyebrow">
-        <span class="mono">COMPRSA &middot; Alpha Advisors</span>
-        <span class="sep"></span>
-        <span class="mono">Team of the Year 2026</span>
-      </div>
-      <h1>We build the system<br>the business <em>runs on</em>.</h1>
-      <p class="lede">RCS is the ERP platform behind our projects, contracts, people and finances &mdash; one Angular workspace over a set of .NET services we own end to end. This is the team that designs it, ships it and keeps it up.</p>
-      <div class="hero-cta">
-        <a class="btn btn-p" href="#platform">See the platform</a>
-        <a class="btn btn-s" href="#team">Meet the team</a>
-      </div>
+    <div class="nav-right">
+      <a class="mono" href="#team">TOTY 2026</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+      <a class="btn btn-primary" href="#cta">
+        <span class="roll"><span>OPEN RCS</span><span>OPEN RCS</span></span>
+      </a>
     </div>
+  </div>
+  <div class="nav-drawer" id="navDrawer"><div>
+    <a href="#platform">Platform</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#process">Process</a>
+    <a href="#team">Team</a>
+    <a href="#faq">FAQ</a>
+  </div></div>
+</header>
 
-    <!-- Title block: numbers are placeholders — swap for the real figures -->
-    <div class="titleblock">
-      <header>
-        <span class="mono">Sheet &mdash; RCS/2026</span>
-        <span class="mono">Rev. 01</span>
-      </header>
-      <div class="tb-grid">
-        <div class="tb-cell"><span class="v">4</span><span class="k mono">Core services</span></div>
-        <div class="tb-cell"><span class="v">1</span><span class="k mono">Shared UI library</span></div>
-        <div class="tb-cell"><span class="v">12</span><span class="k mono">Modules live</span></div>
-        <div class="tb-cell"><span class="v">100%</span><span class="k mono">Reviewed PRs</span></div>
+<!-- ================= HERO ================= -->
+<section class="band dark hero" id="top">
+  <div class="hero-glow"><canvas id="glow" aria-hidden="true"></canvas></div>
+  <div class="frame hero-in">
+    <h1 class="hero-title" id="heroTitle">
+      <span class="ln"><span>The ERP Platform</span></span>
+      <span class="ln"><span>The Business</span></span>
+      <span class="ln"><span>Actually Runs On</span></span>
+    </h1>
+    <p class="hero-sub" data-hero="1">Projects, contracts, finance and document control in one system — designed, built and run in-house by the COMPRSA engineering team.</p>
+    <div class="hero-cta" data-hero="2">
+      <a class="btn btn-primary" href="#team">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5"/></svg>
+        </span>
+        <span class="roll"><span>MEET THE TEAM</span><span>MEET THE TEAM</span></span>
+      </a>
+      <a class="btn btn-ghost" href="#platform">
+        <span class="roll"><span>SEE THE PLATFORM</span><span>SEE THE PLATFORM</span></span>
+      </a>
+    </div>
+    <div class="hero-frame ticks" data-hero="3">
+      <div class="rows" aria-hidden="true"></div>
+      <div class="prompt"><span id="typed"></span><span class="caret" aria-hidden="true"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= USED BY STRIP ================= -->
+<section class="band light strip">
+  <div class="strip-in">
+    <div class="strip-lab">Used every day across the business</div>
+    <div class="marquee">
+      <div class="marquee-track" id="markTrack"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE CHALLENGE ================= -->
+<section class="band light" id="platform">
+  <div class="frame pad">
+    <div class="section-head">
+      <span class="chip" data-reveal>Before RCS</span>
+      <h2 class="big" data-reveal>The Work Was Real. The System Wasn&rsquo;t.</h2>
+      <p class="sub" data-reveal>Projects were run out of spreadsheets, shared drives and a handful of standalone tools. Nothing was wrong with the people &mdash; the platform underneath them just didn&rsquo;t exist yet.</p>
+    </div>
+    <div class="cards3">
+      <div data-reveal>
+        <div class="art">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 6v10M24 32v10M6 24h10M32 24h10M12 12l7 7M29 29l7 7M36 12l-7 7M19 29l-7 7"/></svg>
+        </div>
+        <h3 class="card-t">Spreadsheet Sprawl</h3>
+        <p class="card-p">Every project kept its own version of the truth. Consolidating anything meant chasing files and hoping the last save was the right one.</p>
+      </div>
+      <div data-reveal>
+        <div class="art">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 10 40 19l-16 9-16-9 16-9Z"/><path d="M8 29l16 9 16-9"/></svg>
+        </div>
+        <h3 class="card-t">Double Capture</h3>
+        <p class="card-p">The same hours, rates and quantities were typed into three places. Every re-entry was another chance for the numbers to disagree.</p>
+      </div>
+      <div data-reveal>
+        <div class="art">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 38 22 10M24 38 32 10M34 38 42 10"/></svg>
+        </div>
+        <h3 class="card-t">Reporting Lag</h3>
+        <p class="card-p">Management reporting was rebuilt by hand each month, which meant decisions were made on a picture that was already weeks old.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="platform">
-  <div class="wrap sec">
-    <div class="field"><span class="mono">01 &mdash; Platform</span><div class="tick"></div></div>
-    <div>
-      <h2 class="h">One place for the work, the money and the paperwork</h2>
-      <p class="lede">RCS replaced a spread of spreadsheets, shared drives and standalone tools with a single system. Every module sits on the same identity, the same master data and the same audit trail, so a project manager, a finance lead and an administrator are all looking at the same numbers.</p>
-      <div class="grid g3 rise" style="margin-top:30px;">
-        <div class="card">
-          <span class="mono">Projects</span>
-          <h3 class="sub">Projects &amp; contracts</h3>
-          <p>Project setup, contract structures, milestones and progress claims tracked against the commercial terms that actually govern them.</p>
-        </div>
-        <div class="card">
-          <span class="mono">Finance</span>
-          <h3 class="sub">Billing &amp; cost control</h3>
-          <p>Timesheets, disbursements, invoicing and cost-to-complete in one flow, reconciled rather than re-keyed.</p>
-        </div>
-        <div class="card">
-          <span class="mono">Documents</span>
-          <h3 class="sub">Document control</h3>
-          <p>Controlled documents with revisions, transmittals and generated output &mdash; including automated bookmarking and compression for large contract sets.</p>
-        </div>
-        <div class="card">
-          <span class="mono">Identity</span>
-          <h3 class="sub">Identity &amp; access</h3>
-          <p>Single sign-on, role-based permissions and per-tenant configuration handled centrally by RCS-Identity, not per screen.</p>
-        </div>
-        <div class="card">
-          <span class="mono">Admin</span>
-          <h3 class="sub">Master data &amp; admin</h3>
-          <p>Clients, staff, rates, cost codes and lookups administered once through RCS-Admin-Core and consumed everywhere.</p>
-        </div>
-        <div class="card">
-          <span class="mono">Insight</span>
-          <h3 class="sub">Reporting</h3>
-          <p>Operational dashboards and exports built on the live database, so management reporting stops being a monthly reconstruction.</p>
-        </div>
-      </div>
+<!-- ================= SOLUTIONS ================= -->
+<section class="band dark">
+  <div class="frame pad">
+    <div class="section-head">
+      <span class="chip" data-reveal>Platform</span>
+      <h2 class="big" data-reveal>Everything The Business Runs On</h2>
     </div>
-  </div>
-</section>
-
-<section id="architecture">
-  <div class="wrap sec">
-    <div class="field"><span class="mono">02 &mdash; Architecture</span><div class="tick"></div></div>
-    <div>
-      <h2 class="h">Built as parts we can replace</h2>
-      <p class="lede">An Angular workspace on the front, a gateway in the middle, focused .NET services behind it and PostgreSQL underneath. Each service owns its own concern, which is what lets us ship one module without holding the rest of the platform still.</p>
-
-      <div class="diagram rise" style="margin-top:28px;" role="img" aria-label="Architecture: the rcs-erp-ui Angular workspace and shared component library call RCS-Gateway, which routes to RCS-Identity, RCS-Admin-Core and the domain services, all backed by PostgreSQL. CI/CD runs through GitHub Actions and Octopus Deploy with Discord notifications.">
-        <svg viewBox="0 0 900 430" width="900" height="430" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono, monospace">
-          <defs>
-            <pattern id="dgrid" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M20 0H0V20" fill="none" stroke="var(--grid)" stroke-width="1"/>
-            </pattern>
-            <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0 0 L10 5 L0 10 z" fill="var(--rule-strong)"/>
-            </marker>
-          </defs>
-          <rect x="0" y="0" width="900" height="430" fill="url(#dgrid)"/>
-
-          <!-- client layer -->
-          <rect x="60" y="34" width="470" height="72" rx="2" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2"/>
-          <text x="78" y="62" fill="var(--accent-ink)" font-size="14" font-weight="500">rcs-erp-ui</text>
-          <text x="78" y="84" fill="var(--ink-2)" font-size="11.5" letter-spacing="0.5">Angular workspace &middot; lazy-loaded modules</text>
-          <rect x="560" y="34" width="280" height="72" rx="2" fill="var(--surface-2)" stroke="var(--rule-strong)" stroke-width="1"/>
-          <text x="578" y="62" fill="var(--ink)" font-size="14" font-weight="500">ui-components</text>
-          <text x="578" y="84" fill="var(--ink-2)" font-size="11.5">shared library &middot; design tokens</text>
-          <line x1="530" y1="70" x2="560" y2="70" stroke="var(--rule-strong)" stroke-width="1" stroke-dasharray="4 3"/>
-
-          <!-- gateway -->
-          <line x1="295" y1="106" x2="295" y2="150" stroke="var(--rule-strong)" stroke-width="1" marker-end="url(#arw)"/>
-          <text x="305" y="132" fill="var(--ink-3)" font-size="10.5" letter-spacing="1">HTTPS / JWT</text>
-          <rect x="60" y="150" width="780" height="58" rx="2" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.4"/>
-          <text x="78" y="185" fill="var(--ink)" font-size="14" font-weight="500">RCS-Gateway</text>
-          <text x="230" y="185" fill="var(--ink-2)" font-size="11.5">routing &middot; auth forwarding &middot; CORS &middot; rate limits</text>
-
-          <!-- services -->
-          <line x1="180" y1="208" x2="180" y2="252" stroke="var(--rule-strong)" stroke-width="1" marker-end="url(#arw)"/>
-          <line x1="450" y1="208" x2="450" y2="252" stroke="var(--rule-strong)" stroke-width="1" marker-end="url(#arw)"/>
-          <line x1="720" y1="208" x2="720" y2="252" stroke="var(--rule-strong)" stroke-width="1" marker-end="url(#arw)"/>
-          <rect x="60" y="252" width="240" height="66" rx="2" fill="var(--surface)" stroke="var(--rule-strong)"/>
-          <text x="78" y="280" fill="var(--ink)" font-size="13" font-weight="500">RCS-Identity</text>
-          <text x="78" y="300" fill="var(--ink-2)" font-size="11">SSO &middot; roles &middot; tokens</text>
-          <rect x="330" y="252" width="240" height="66" rx="2" fill="var(--surface)" stroke="var(--rule-strong)"/>
-          <text x="348" y="280" fill="var(--ink)" font-size="13" font-weight="500">RCS-Admin-Core</text>
-          <text x="348" y="300" fill="var(--ink-2)" font-size="11">master data &middot; config</text>
-          <rect x="600" y="252" width="240" height="66" rx="2" fill="var(--surface)" stroke="var(--rule-strong)"/>
-          <text x="618" y="280" fill="var(--ink)" font-size="13" font-weight="500">Domain services</text>
-          <text x="618" y="300" fill="var(--ink-2)" font-size="11">projects &middot; finance &middot; docs</text>
-
-          <!-- data -->
-          <line x1="180" y1="318" x2="180" y2="356" stroke="var(--rule-strong)" stroke-width="1" marker-end="url(#arw)"/>
-          <line x1="450" y1="318" x2="450" y2="356" stroke="var(--rule-strong)" stroke-width="1" marker-end="url(#arw)"/>
-          <line x1="720" y1="318" x2="720" y2="356" stroke="var(--rule-strong)" stroke-width="1" marker-end="url(#arw)"/>
-          <rect x="60" y="356" width="780" height="52" rx="2" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2"/>
-          <text x="78" y="388" fill="var(--accent-ink)" font-size="13" font-weight="500">PostgreSQL</text>
-          <text x="200" y="388" fill="var(--ink-2)" font-size="11.5">migrations in source control &middot; environment-scoped config</text>
-        </svg>
+    <div class="sol">
+      <div class="rail" id="rail">
+        <button data-goto="p1" class="on">Projects &amp; Contracts</button>
+        <button data-goto="p2">Finance &amp; Billing</button>
+        <button data-goto="p3">Documents &amp; Reporting</button>
       </div>
+      <div class="panels" id="panels">
 
-      <div class="grid g2 rise" style="margin-top:16px;">
-        <div class="card">
-          <span class="mono">Frontend</span>
-          <h3 class="sub">A workspace, not a monolith of screens</h3>
-          <p>Feature modules load on demand and share one component library, so a pattern fixed once is fixed everywhere. New modules start from the same shell instead of a blank page.</p>
-        </div>
-        <div class="card">
-          <span class="mono">Backend</span>
-          <h3 class="sub">Services with clear edges</h3>
-          <p>Identity, admin and domain concerns are separate deployables behind one gateway. Local environments run several frontends against the same API without CORS gymnastics.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="team">
-  <div class="wrap sec">
-    <div class="field"><span class="mono">03 &mdash; Team</span><div class="tick"></div></div>
-    <div>
-      <h2 class="h">The people behind it</h2>
-      <p class="lede">A small team with wide coverage &mdash; frontend architecture, backend services, data, infrastructure and the internal tooling that keeps all of it moving.</p>
-      <div class="team rise" id="team-grid" style="margin-top:30px;"></div>
-      <p class="note"><strong>Placeholder content.</strong> Real names, roles and blurbs go in the <code>TEAM</code> list at the top of the script block &mdash; edit that one array and the cards update.</p>
-    </div>
-  </div>
-</section>
-
-<section id="delivery">
-  <div class="wrap sec">
-    <div class="field"><span class="mono">04 &mdash; Delivery</span><div class="tick"></div></div>
-    <div>
-      <h2 class="h">How the year went</h2>
-      <p class="lede">Numbered because it is a sequence: each step made the next one cheaper.</p>
-      <ol class="tl rise" style="margin-top:28px;">
-        <li>
-          <div class="no"><b>01</b>Q1</div>
-          <div>
-            <h3 class="sub">Foundations hardened<span class="state done">Shipped</span></h3>
-            <p>Branch protection and required reviews on the main development branches, migrations brought fully into source control, and local environment setup reduced to a documented, repeatable path.</p>
+        <article class="panel ticks" id="p1" data-reveal>
+          <div class="panel-l">
+            <h3>Projects &amp; Contracts</h3>
+            <p>Project setup, contract structures, milestones and progress claims tracked against the commercial terms that actually govern them.</p>
+            <div class="pills"><span class="pill">Contract structures</span><span class="pill">Progress claims</span><span class="pill">Milestones</span></div>
           </div>
-        </li>
-        <li>
-          <div class="no"><b>02</b>Q2</div>
-          <div>
-            <h3 class="sub">Shared component library<span class="state done">Shipped</span></h3>
-            <p>Common tables, forms and layout primitives pulled out of individual screens into one versioned library with design tokens. Module work sped up and the UI stopped drifting between areas.</p>
+          <div class="panel-r">
+            <div class="mock">
+              <span class="mono lab">Find work across the portfolio</span>
+              <div class="field">Contract 4127 &mdash; measured quantities<span class="caret" aria-hidden="true"></span></div>
+              <span class="go">Open contract</span>
+              <ul class="cycle">
+                <li><i></i>Progress claim 14 &mdash; drafted</li>
+                <li><i></i>Variation order 3 &mdash; approved</li>
+                <li><i></i>Retention release &mdash; pending</li>
+                <li><i></i>Final account &mdash; in review</li>
+              </ul>
+            </div>
           </div>
-        </li>
-        <li>
-          <div class="no"><b>03</b>Q2</div>
-          <div>
-            <h3 class="sub">Automated release pipeline<span class="state done">Shipped</span></h3>
-            <p>GitHub Actions builds into Octopus Deploy, with a Cloudflare Workers service posting build and deployment status to the team&rsquo;s Discord channels. Releases became routine instead of an event.</p>
+        </article>
+
+        <article class="panel ticks" id="p2" data-reveal>
+          <div class="panel-l">
+            <h3>Finance &amp; Billing</h3>
+            <p>Timesheets, disbursements, invoicing and cost-to-complete in one flow &mdash; reconciled against the project, not re-keyed beside it.</p>
+            <div class="pills"><span class="pill">Timesheets</span><span class="pill">Invoicing</span><span class="pill">Cost control</span></div>
           </div>
-        </li>
-        <li>
-          <div class="no"><b>04</b>Q3</div>
-          <div>
-            <h3 class="sub">AI-assisted code review<span class="state now">In progress</span></h3>
-            <p>An automated reviewer runs on every pull request in the frontend repo, catching the mechanical problems before a human reads the diff so review time goes to design decisions.</p>
+          <div class="panel-r">
+            <div class="flow">
+              <div class="node"><span>Month-end run</span><span class="mono">Processing</span></div>
+              <div class="wire" aria-hidden="true"></div>
+              <div class="agents">
+                <div class="agent"><span class="mono">Timesheets</span><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+                <div class="agent"><span class="mono">Disbursements</span><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+                <div class="agent"><span class="mono">Invoices</span><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+              </div>
+              <div class="wire" aria-hidden="true"></div>
+              <div class="node"><span>Reconciled to ledger</span><span class="dot-live" aria-hidden="true"></span></div>
+            </div>
           </div>
-        </li>
-        <li>
-          <div class="no"><b>05</b>Q4</div>
-          <div>
-            <h3 class="sub">Next modules<span class="state">Planned</span></h3>
-            <p>Remaining finance and document-control workflows onto the platform, deeper reporting, and continued reduction of the manual steps still living outside RCS.</p>
+        </article>
+
+        <article class="panel ticks" id="p3" data-reveal>
+          <div class="panel-l">
+            <h3>Documents &amp; Reporting</h3>
+            <p>Controlled documents with revisions and transmittals, generated output, and dashboards built on the live database rather than last month&rsquo;s export.</p>
+            <div class="pills"><span class="pill">Revisions</span><span class="pill">Transmittals</span><span class="pill">Live dashboards</span></div>
           </div>
-        </li>
-      </ol>
+          <div class="panel-r">
+            <div class="stat-row">
+              <div class="stat"><span class="k mono">Docs controlled</span><div class="v" data-count="12480" data-suffix="">0</div><div class="d">+ this year</div></div>
+              <div class="stat"><span class="k mono">Report build time</span><div class="v" data-count="4" data-suffix="s">0</div><div class="d">was 3 days</div></div>
+              <div class="stat" style="grid-column:1/-1"><span class="k mono">Single source of truth</span><div class="v" data-count="100" data-suffix="%">0</div><div class="d">one database, one audit trail</div></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
   </div>
 </section>
 
-<section id="practice">
-  <div class="wrap sec">
-    <div class="field"><span class="mono">05 &mdash; Practice</span><div class="tick"></div></div>
-    <div>
-      <h2 class="h">What we do differently</h2>
-      <p class="lede">The platform is the visible half. The other half is the practice around it &mdash; the reason a change lands the same way on a Tuesday afternoon as it does on a quiet Friday.</p>
-      <div class="grid g2 rise" style="margin-top:30px;">
-        <div class="card">
-          <span class="mono">Review</span>
-          <h3 class="sub">Every change is read</h3>
-          <p>Protected branches, required reviews, and automation that handles the mechanical pass. Reviews are about architecture, not formatting.</p>
+<!-- ================= CAPABILITIES ================= -->
+<section class="band light" id="capabilities">
+  <div class="frame pad">
+    <div class="section-head">
+      <span class="chip" data-reveal>Capabilities</span>
+      <h2 class="big" data-reveal>Everything You Need, In One Workspace</h2>
+      <p class="sub" data-reveal>One Angular workspace over focused .NET services. Built for a business that needs reliability and traceability without waiting a quarter for a change.</p>
+    </div>
+
+    <div class="two-up">
+      <div class="photo ticks" data-reveal="scale">
+        <div class="glowline" aria-hidden="true"></div>
+        <div class="cap"><b>rcs-erp-ui</b><span>One workspace, twelve modules, one component library</span></div>
+      </div>
+      <div class="dark-panel ticks" data-reveal="scale">
+        <div class="arcs" aria-hidden="true"></div>
+        <h3>Every module speaks the same language</h3>
+        <p>Shared identity, shared master data, shared components. A pattern fixed once is fixed everywhere.</p>
+        <div class="ask">
+          <div class="bar"><span id="typed2"></span><span class="caret" aria-hidden="true"></span></div>
+          <div class="mods">
+            <div class="mod">Projects</div>
+            <div class="mod">Finance</div>
+            <div class="mod">Documents</div>
+            <div class="mod">Admin</div>
+          </div>
         </div>
-        <div class="card">
-          <span class="mono">Tooling</span>
-          <h3 class="sub">We build our own tools</h3>
-          <p>Worktree workflows for parallel branches, custom automation for document generation, notification pipelines wired to the systems we already use. If a task is repeated, it gets scripted.</p>
+      </div>
+    </div>
+
+    <div class="bento">
+      <article class="cell ticks" data-reveal>
+        <div class="top">
+          <div class="tiny"><span class="mono">Input</span>&ldquo;Add a retention column to the claim grid&rdquo;</div>
+          <div class="arrow-down" aria-hidden="true">&darr;</div>
+          <div class="tiny"><span class="mono" style="color:var(--accent)">Shared component</span>Updated in one place, live in every module</div>
         </div>
-        <div class="card">
-          <span class="mono">Reuse</span>
-          <h3 class="sub">Solve it once</h3>
-          <p>Shared components, shared configuration patterns, shared identity. New work inherits decisions instead of relitigating them.</p>
+        <div class="bod">
+          <h3>Shared Component Library</h3>
+          <p>Tables, forms and layout primitives live in one versioned library with design tokens, so the UI stops drifting between areas.</p>
         </div>
-        <div class="card">
-          <span class="mono">Ownership</span>
-          <h3 class="sub">From branch to production</h3>
-          <p>The same team designs the interface, writes the service, runs the pipeline and answers when something breaks. Nothing is thrown over a wall.</p>
+      </article>
+      <article class="cell ticks" data-reveal>
+        <div class="top">
+          <div class="code">
+<span class="c-dim">// RCS-Gateway</span><br>
+<span class="c-key">app</span>.MapReverseProxy();<br>
+<span class="c-key">route</span>: <span class="c-str">"/identity"</span><br>
+<span class="c-key">route</span>: <span class="c-str">"/admin-core"</span><br>
+<span class="c-key">route</span>: <span class="c-str">"/projects"</span>
+          </div>
+          <div style="height:12px"></div>
+          <span class="deployed" style="position:relative;z-index:2">Deployed</span>
+        </div>
+        <div class="bod">
+          <h3>Services With Clear Edges</h3>
+          <p>Identity, admin and domain concerns are separate deployables behind one gateway. One module ships without holding the platform still.</p>
+        </div>
+      </article>
+      <article class="cell ticks" data-reveal>
+        <div class="top">
+          <div class="tool-grid">
+            <span class="tool">GitHub</span><span class="tool">Octopus</span><span class="tool">Azure</span>
+            <span class="tool">Discord</span><span class="tool">PostgreSQL</span><span class="tool">Power BI</span>
+            <span class="tool">Outlook</span><span class="tool">Teams</span><span class="tool">API</span>
+          </div>
+        </div>
+        <div class="bod">
+          <h3>Connected To Everything Else</h3>
+          <p>Releases, notifications, reporting and mail all wire into the systems the business already uses &mdash; no parallel process to maintain.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="pill-marquee" data-reveal>
+      <div class="pill-row"><div class="pill-track" data-pills="a"></div></div>
+      <div class="pill-row rev"><div class="pill-track" data-pills="b"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="band light" id="process">
+  <div class="frame pad">
+    <div class="section-head">
+      <span class="chip" data-reveal>Process</span>
+      <h2 class="big" data-reveal>How A Change Reaches Production</h2>
+      <p class="sub" data-reveal>Predictable, reviewed and automated end to end &mdash; the same on a Tuesday afternoon as on a quiet Friday.</p>
+    </div>
+    <div class="proc">
+      <div class="steps" id="steps">
+        <div class="step open">
+          <button class="head"><h3>Build On Rails</h3><span class="no">01</span></button>
+          <div class="body"><div><p>Work starts from the shared shell and component library on a protected branch. Git worktrees and stacked branches keep parallel work moving without stepping on anyone.</p></div></div>
+        </div>
+        <div class="step">
+          <button class="head"><h3>Reviewed Before It Lands</h3><span class="no">02</span></button>
+          <div class="body"><div><p>Required reviews on every pull request, with automation handling the mechanical pass first so human review goes to architecture and intent.</p></div></div>
+        </div>
+        <div class="step">
+          <button class="head"><h3>Shipped And Announced</h3><span class="no">03</span></button>
+          <div class="body"><div><p>GitHub Actions builds into Octopus Deploy, and a Cloudflare Workers service posts build and deployment status straight into the team&rsquo;s Discord channels.</p></div></div>
+        </div>
+      </div>
+      <div class="proc-visual ticks" data-reveal="scale">
+        <div class="swoosh" aria-hidden="true"></div>
+        <div class="proc-card">
+          <div class="row"><span>Pull request opened</span><span class="mono">Checks</span></div>
+          <div class="row"><span>Automated review</span><span class="mono">Passed</span></div>
+          <div class="row"><span>GitHub Actions build</span><span class="mono">2m 14s</span></div>
+          <div class="row"><span>Octopus release</span><span class="mono">Promoted</span></div>
+          <div class="row"><span>Discord notification</span><span class="dot-live" aria-hidden="true"></span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="stack">
-  <div class="wrap sec">
-    <div class="field"><span class="mono">06 &mdash; Stack</span><div class="tick"></div></div>
-    <div>
-      <h2 class="h">What it&rsquo;s made of</h2>
-      <div style="margin-top:24px;">
-        <div class="stack-row"><span class="mono" style="color:var(--ink-3);">Frontend</span><div class="chips"><span class="chip">Angular</span><span class="chip">TypeScript</span><span class="chip">RxJS</span><span class="chip">SCSS</span><span class="chip">Shared component library</span></div></div>
-        <div class="stack-row"><span class="mono" style="color:var(--ink-3);">Backend</span><div class="chips"><span class="chip">.NET</span><span class="chip">C#</span><span class="chip">REST APIs</span><span class="chip">RCS-Gateway</span><span class="chip">RCS-Identity</span><span class="chip">RCS-Admin-Core</span></div></div>
-        <div class="stack-row"><span class="mono" style="color:var(--ink-3);">Data</span><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">Versioned migrations</span><span class="chip">Reporting views</span></div></div>
-        <div class="stack-row"><span class="mono" style="color:var(--ink-3);">Delivery</span><div class="chips"><span class="chip">GitHub Actions</span><span class="chip">Octopus Deploy</span><span class="chip">Cloudflare Workers</span><span class="chip">Discord notifications</span></div></div>
-        <div class="stack-row"><span class="mono" style="color:var(--ink-3);">Platform</span><div class="chips"><span class="chip">Azure</span><span class="chip">Site-to-client VPN</span><span class="chip">Environment-scoped config</span></div></div>
-        <div class="stack-row"><span class="mono" style="color:var(--ink-3);">Ways of working</span><div class="chips"><span class="chip">Git worktrees</span><span class="chip">Stacked branches</span><span class="chip">Branch protection</span><span class="chip">Automated PR review</span></div></div>
+<!-- ================= TEAM ================= -->
+<section class="band dark" id="team">
+  <div class="frame pad">
+    <div class="section-head">
+      <span class="chip" data-reveal>Team of the Year 2026</span>
+      <h2 class="big" data-reveal>The People Behind RCS</h2>
+      <p class="sub" data-reveal>A small team with wide coverage &mdash; frontend architecture, backend services, data, infrastructure and the internal tooling that keeps all of it moving.</p>
+    </div>
+    <div class="team" id="teamGrid"></div>
+    <div class="tiles" data-reveal>
+      <div class="tile"><div class="v" data-count="12" data-suffix="">0</div><div class="k">Modules live</div></div>
+      <div class="tile"><div class="v" data-count="4" data-suffix="">0</div><div class="k">Core services</div></div>
+      <div class="tile"><div class="v" data-count="1" data-suffix="">0</div><div class="k">Shared UI library</div></div>
+      <div class="tile"><div class="v" data-count="100" data-suffix="%">0</div><div class="k">Reviewed PRs</div></div>
+      <div class="tile"><div class="v" data-count="6" data-suffix="x">0</div><div class="k">Faster releases</div></div>
+    </div>
+    <p class="sub" data-reveal style="margin-top:18px;font-size:13.5px">Placeholder team details &mdash; edit the <code>TEAM</code> array at the top of app.js. Tile figures are placeholders too.</p>
+  </div>
+</section>
+
+<!-- ================= SECURITY ================= -->
+<section class="band light">
+  <div class="frame pad">
+    <div class="sec-grid">
+      <div class="section-head">
+        <span class="chip" data-reveal>Security</span>
+        <h2 class="big" data-reveal>Access You Can Account For</h2>
+        <p class="sub" data-reveal>Who can see what, and who did what, is handled centrally &mdash; not screen by screen.</p>
+      </div>
+      <div class="sec-items">
+        <div data-reveal>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 20 6v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4Z"/></svg>
+          <h3>Single Sign-On</h3>
+          <p>One identity across every module, issued and validated by RCS-Identity.</p>
+        </div>
+        <div data-reveal>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          <h3>Role-Based Access</h3>
+          <p>Permissions follow the role, so a change to a role changes every screen at once.</p>
+        </div>
+        <div data-reveal>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg>
+          <h3>Private Network</h3>
+          <p>Environments sit behind the company network, reachable over VPN rather than the open internet.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="close">
-  <div class="wrap sec">
-    <div class="field"><span class="mono">07 &mdash; Why us</span><div class="tick"></div></div>
-    <div>
-      <p class="pull">A platform the business trusts, built by a team that owns every layer of it.</p>
-      <div class="cols">
-        <div><span class="mono" style="color:var(--accent);">Impact</span><p>RCS is where the work is planned, costed, billed and documented. When it improves, everyone&rsquo;s week improves.</p></div>
-        <div><span class="mono" style="color:var(--accent);">Range</span><p>Angular architecture through .NET services, PostgreSQL, CI/CD and internal tooling &mdash; covered by a handful of people.</p></div>
-        <div><span class="mono" style="color:var(--accent);">Discipline</span><p>Protected branches, reviewed changes, automated releases. Speed that comes from good rails, not from cutting corners.</p></div>
+<!-- ================= DELIVERY HIGHLIGHTS ================= -->
+<section class="band light">
+  <div class="frame pad">
+    <div class="section-head">
+      <span class="chip" data-reveal>The Year</span>
+      <h2 class="big" data-reveal>What We Shipped</h2>
+      <p class="sub" data-reveal>Each of these made the next one cheaper.</p>
+    </div>
+    <div class="rows">
+      <article class="row-item" data-reveal>
+        <div class="thumb"><span>Foundations</span></div>
+        <div>
+          <span class="chip">Q1</span>
+          <h3>Branch Protection And Repeatable Environments</h3>
+        </div>
+        <p>Required reviews on the development branches, migrations fully in source control, and local setup reduced to a documented path.</p>
+        <span class="row-go" aria-hidden="true">
+          <svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5"/></svg>
+        </span>
+      </article>
+      <article class="row-item" data-reveal>
+        <div class="thumb"><span>Component Library</span></div>
+        <div>
+          <span class="chip">Q2</span>
+          <h3>One Shared Library For The Whole Workspace</h3>
+        </div>
+        <p>Common tables, forms and layout primitives pulled out of individual screens into a versioned library with design tokens.</p>
+        <span class="row-go" aria-hidden="true">
+          <svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5"/></svg>
+        </span>
+      </article>
+      <article class="row-item" data-reveal>
+        <div class="thumb"><span>Release Pipeline</span></div>
+        <div>
+          <span class="chip">Q3</span>
+          <h3>Automated Releases With Live Notifications</h3>
+        </div>
+        <p>GitHub Actions into Octopus Deploy, with a Cloudflare Workers service reporting build and deploy status to Discord. Releases became routine.</p>
+        <span class="row-go" aria-hidden="true">
+          <svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5"/></svg>
+        </span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="band light" id="faq">
+  <div class="frame pad">
+    <div class="faq">
+      <div class="faq-aside">
+        <span class="chip" data-reveal>FAQ</span>
+        <h2 class="big" data-reveal>Questions We Get Asked</h2>
+        <div style="height:40px"></div>
+        <div data-reveal>
+          <div class="faces" aria-hidden="true"><i>RC</i><i>SD</i></div>
+          <p style="font-size:15px">Something not covered here?</p>
+          <p class="sub" style="margin-top:2px">Ask the RCS team directly.</p>
+          <div style="height:16px"></div>
+          <a class="btn btn-dark" href="#cta"><span class="roll"><span>CONTACT THE TEAM</span><span>CONTACT THE TEAM</span></span></a>
+        </div>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="qa open">
+          <button class="q"><span>What exactly is RCS?</span><i aria-hidden="true"></i></button>
+          <div class="a"><div><p>RCS is our in-house ERP platform: an Angular workspace over a set of .NET services and a PostgreSQL database, covering projects, contracts, finance, documents and administration.</p></div></div>
+        </div>
+        <div class="qa">
+          <button class="q"><span>Why build it instead of buying one?</span><i aria-hidden="true"></i></button>
+          <div class="a"><div><p>The commercial terms and document control our work runs on are specific enough that off-the-shelf ERP would need heavy customisation anyway &mdash; and we would still be waiting on someone else&rsquo;s roadmap for every change.</p></div></div>
+        </div>
+        <div class="qa">
+          <button class="q"><span>Who can access what?</span><i aria-hidden="true"></i></button>
+          <div class="a"><div><p>Access is role-based and issued centrally by RCS-Identity. Changing a role changes every module at once, and every change is attributable.</p></div></div>
+        </div>
+        <div class="qa">
+          <button class="q"><span>How often does it change?</span><i aria-hidden="true"></i></button>
+          <div class="a"><div><p>Continuously. Releases are automated through GitHub Actions and Octopus Deploy, so a reviewed change reaches production without a scheduled event around it.</p></div></div>
+        </div>
+        <div class="qa">
+          <button class="q"><span>What happens to the old spreadsheets?</span><i aria-hidden="true"></i></button>
+          <div class="a"><div><p>They get retired module by module. Where a process still lives outside RCS, it is on the list rather than forgotten.</p></div></div>
+        </div>
+        <div class="qa">
+          <button class="q"><span>Can it report on live data?</span><i aria-hidden="true"></i></button>
+          <div class="a"><div><p>Yes. Dashboards and exports read the live database, so management reporting is a view rather than a monthly reconstruction.</p></div></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap foot-in">
-    <span class="mono">RCS TOTY 2026 &middot; COMPRSA / Alpha Advisors</span>
-    <span class="mono">Sheet RCS/2026 &mdash; Rev. 01</span>
+<!-- ================= CTA ================= -->
+<section class="band dark cta" id="cta">
+  <div class="dots" aria-hidden="true"></div>
+  <div class="sparks" id="sparks" aria-hidden="true"></div>
+  <div class="frame pad">
+    <span class="chip" data-reveal>Team of the Year</span>
+    <h2 data-reveal>One Platform. One Team. Every Layer Owned.</h2>
+    <p data-reveal>RCS is where the work is planned, costed, billed and documented &mdash; built and run by the people who answer when it matters.</p>
+    <div class="hero-cta" data-reveal>
+      <a class="btn btn-primary" href="#team">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5"/></svg>
+        </span>
+        <span class="roll"><span>MEET THE TEAM</span><span>MEET THE TEAM</span></span>
+      </a>
+      <a class="btn btn-ghost" href="#platform">
+        <span class="roll"><span>REVISIT THE PLATFORM</span><span>REVISIT THE PLATFORM</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="band dark foot">
+  <div class="frame">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><span class="glyph"></span>RCS</a>
+        <p>The ERP platform behind COMPRSA&rsquo;s projects, contracts, finances and documents &mdash; built in-house, shipped continuously.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#platform">Overview</a></li>
+          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Team</h4>
+        <ul>
+          <li><a href="#team">Team of the Year</a></li>
+          <li><a href="#team">Who does what</a></li>
+          <li><a href="#process">How we work</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Stack</h4>
+        <ul>
+          <li><a href="#capabilities">Angular</a></li>
+          <li><a href="#capabilities">.NET services</a></li>
+          <li><a href="#capabilities">PostgreSQL</a></li>
+          <li><a href="#capabilities">Azure &amp; Octopus</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 &nbsp;COMPRSA / Alpha Advisors &nbsp;&middot;&nbsp; RCS TOTY 2026</span>
+      <span class="mono">Internal showcase</span>
+    </div>
+    <div class="wordmark-huge" aria-hidden="true">RCS ERP</div>
   </div>
 </footer>
 
 <script src="app.js" defer></script>
-
 </body>
 </html>
